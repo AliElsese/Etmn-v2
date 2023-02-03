@@ -1,0 +1,65 @@
+<%- include('include/_header') %>
+
+<div class="container mt-5">
+
+    <div class="box m-5">
+        <div class="row pt-5">
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-success">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <a href="/dashboard-works/<%= ministryid %>" class="btn">جمبع جهات العمل</a>
+        </div>
+
+        <div class="col-md-12 text text-center pt-5">
+            <div class="form-title">
+                <h2>جهة عمل جديدة</h2>
+                <div class="divider mb-2"></div>
+            </div>
+        </div>
+
+        <form action="/api-addWork" method="post" id="add_product">
+              
+            <div class="row">
+                <div class="col-md-12 text-right">
+
+                    <div class="row mb-2">
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                        <!-- Text input-->
+                        <div class="form-group col-md-8">
+                            <label class="control-label" for="">جهة العمل</label>  
+                            <input type="hidden" name="ministryid" value="<%= ministryid %>">
+                            <input id="" name="workname" placeholder="جهة العمل" class="form-control" type="text">
+                        </div>
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                    </div>
+
+                    <div class="row mb-2 mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="form-group">
+                                <button type="submit" class="btn"> تسجيل </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+<%- include('include/_footer') %>

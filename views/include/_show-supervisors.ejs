@@ -1,0 +1,19 @@
+<% for(var i = 0; i < supervisors.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= supervisors[i].supervisorname %></td>
+        <td><%= supervisors[i].phone %></td>
+        <td><%= supervisors[i].gouvernement %></td>
+        <td><%= supervisors[i].city %></td>
+        <% if(supervisors[i].supervisorstatus == 'true') { %>
+            <td>مشرف محافظة</td>
+        <% } else { %>
+            <td>مشرف مدينة</td>
+        <% } %>
+        <td>
+            <a href="/api-deleteSupervisor/<%= supervisors[i].supervisorid %>" style="display: inline-block; color: darkred" class="delete">
+                حذف
+            </a>
+        </td>
+    </tr>
+<% } %>

@@ -1,0 +1,15 @@
+<% for(var i = 0; i < ministries.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= ministries[i].ministryname %></td>
+        <td>
+            <a href="/api-deleteMinistry/<%= ministries[i].ministryid %>" style="display: inline-block; color: darkred" class="delete">
+                حذف
+            </a>
+            <br>
+            <a href="/dashboard-works/<%= ministries[i].ministryid %>" style="display: inline-block; color: rgb(0, 139, 81)" class="delete">
+                عرض جهات العمل
+            </a>
+        </td>
+    </tr>
+<% } %>

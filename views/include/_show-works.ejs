@@ -1,0 +1,11 @@
+<% for(var i = 0; i < works.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= works[i].workname %></td>
+        <td>
+            <a href="/api-deleteWork/<%= works[i].ministryid %>/<%= works[i].workid %>" style="display: inline-block; color: darkred" class="delete">
+                حذف
+            </a>
+        </td>
+    </tr>
+<% } %>

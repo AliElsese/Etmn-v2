@@ -1,0 +1,121 @@
+<%- include('include/_header') %>
+
+<div class="container mt-5">
+
+    <div class="box m-5">
+        <div class="row pt-5">
+            <% if(typeof message != 'undefined') { %>
+                <div class="col-md-12 text-center">
+                    <h4 class="alert alert-success">
+                        <%= message %>
+                    </h4>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <a href="/dashboard-supervisors" class="btn">جمبع المشرفين</a>
+        </div>
+
+        <div class="col-md-12 text text-center pt-5">
+            <div class="form-title">
+                <h2>مشرف جديد</h2>
+                <div class="divider mb-2"></div>
+            </div>
+        </div>
+
+        <form action="/api-addSupervisor" method="post" id="add_product">
+              
+            <div class="row">
+                <div class="col-md-12 text-right">
+
+                    <div class="row mb-2">
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                        <!-- Text input-->
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">الاسم</label>  
+                            
+                            <input id="" name="supervisorname" placeholder="الاسم" class="form-control" type="text">
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">رقم الهاتف</label>  
+                            
+                            <input id="" name="phone" placeholder="رقم الهاتف" class="form-control" type="text">
+                        </div>
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                    </div>
+
+                    <div class="row mb-2">
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                        <!-- Text input-->
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">المحافظة</label>  
+                            
+                            <input id="" name="gouvernement" placeholder="المحافظة" class="form-control" type="text">
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">المدينة</label>  
+                            
+                            <input id="" name="city" placeholder="المدينة" class="form-control" type="text">
+                        </div>
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                    </div>
+
+                    <div class="row mb-2">
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">كلمة السر</label>  
+                            
+                            <input id="" name="password" placeholder="" class="form-control" type="text">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label class="control-label" for="">نوع الاشراف</label>  
+                            
+                            <select name="supervisorstatus" id="" class="form-control">
+                                <option value="true">
+                                    مشرف محافظة
+                                </option>
+                                <option value="false">
+                                    مشرف مدينة
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-2 d-md-block"></div>
+
+                    </div>
+
+                    <div class="row mb-2 mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="form-group">
+                                <button type="submit" class="btn"> تسجيل </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+<%- include('include/_footer') %>

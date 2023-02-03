@@ -1,0 +1,12 @@
+<% for(var i = 0; i < writers.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= writers[i].writername %></td>
+        <td><%= writers[i].phone %></td>
+        <td>
+            <a href="/api-deleteWriter/<%= writers[i].writerid %>" style="display: inline-block; color: darkred" class="delete">
+                حذف
+            </a>
+        </td>
+    </tr>
+<% } %>

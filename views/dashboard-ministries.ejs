@@ -1,0 +1,41 @@
+<%- include('include/_header') %>
+
+<div class="content">
+    <div class="product-table m-5">
+
+        <div class="col-md-12 text-center">
+            <a href="/add-ministry" class="btn">اضافة وزارة</a>
+        </div>
+
+        <% if(typeof message != 'undefined') { %>
+            <div class="col-md-12 text-center">
+                <h4 class="alert alert-success mt-4">
+                    <%= message %>
+                </h4>
+            </div>
+        <% } %>
+
+        <form action="/views/dashboard-ministries" method="post">
+        
+            <table class="table table-striped table-bordered text-center mydatatable" style="width: 100%;">
+        
+                <thead style="background-color: #2f323a;color: #fff;">
+                    <tr>
+                        <th>رقم التسلسل</th>
+                        <th>الوزارة</th>
+                        <th>تحكم</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <%- include('include/_show-ministries') %>
+                </tbody>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('include/_footer') %>

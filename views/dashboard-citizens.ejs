@@ -1,0 +1,41 @@
+<%- include('include/_header') %>
+
+<div class="content">
+    <div class="product-table m-5">
+
+        <% if(typeof message != 'undefined') { %>
+            <div class="col-md-12 text-center">
+                <h4 class="alert alert-success mt-4">
+                    <%= message %>
+                </h4>
+            </div>
+        <% } %>
+
+        <form action="/views/dashboard-citizens" method="post">
+        
+            <table class="table table-striped table-bordered text-center mydatatable" style="width: 100%;">
+        
+                <thead style="background-color: #2f323a;color: #fff;">
+                    <tr>
+                        <th>رقم التسلسل</th>
+                        <th>الاسم</th>
+                        <th>السن</th>
+                        <th>المحافظة</th>
+                        <th>المدينة</th>
+                        <th>العنوان</th>
+                        <th>رقم الهاتف</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <%- include('include/_show-citizens') %>
+                </tbody>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('include/_footer') %>
